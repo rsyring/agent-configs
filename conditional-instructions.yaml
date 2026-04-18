@@ -1,0 +1,32 @@
+# Conditional Instruction Modules:
+# ================================
+#
+# These file references are CONDITIONAL instructions and should ONLY be read when relevant to the
+# task(s) you are performing.
+#
+# You SHOULD INFER their purpose and when to load from the id and `when` descriptin given
+#
+# When multiple areas apply, load all relevant files.
+
+conditional-instructions:
+  - id: agent-specs
+    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/agent-specs.md
+    when:
+      - whenever a "spec" is referenced
+
+  # Python
+  - id: python-cli
+    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/python/cli.md
+    when:
+      - working on python cli code
+
+  - id: python-general
+    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/python/general.md
+    when:
+      - working with python code
+
+  - id: python-cli-click-logging-integration
+    url: https://raw.githubusercontent.com/rsyring/code-examples/refs/heads/main/logs/mu-logs.py
+    when:
+      - when building CLIs from scratch
+      - AND want to configure Python logging from cli options like --debug
