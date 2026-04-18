@@ -4,7 +4,7 @@
 # These file references are CONDITIONAL instructions and should ONLY be read when relevant to the
 # task(s) you are performing.
 #
-# You SHOULD INFER their purpose and when to load from the id and `when` description given
+# You SHOULD INFER their purpose and when to load from the id and `when` description.
 #
 # When multiple areas apply, load all relevant files.
 
@@ -13,6 +13,13 @@ conditional-instructions:
     url: https://raw.githubusercontent.com/rsyring/agent-configs/main/agent-specs.md
     when:
       - whenever a "spec" is referenced
+
+  # Dev Tools
+  - id: mise-uv
+    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/mise-uv.md
+    when:
+      - mise.toml is present
+      - uv.lock is present
 
   # Python
   - id: python-cli

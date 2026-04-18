@@ -14,7 +14,7 @@ Use pathlib.Path for filesystem operations.  Path variable naming conventions:
 - `_fpath`: suffix for files
 
 
-# Subprocess Args & pathlib.Path
+## Subprocess Args & pathlib.Path
 
 `subprocess.run()` / `Popen` takes `pathlib.Path` objects directly as arguments.  Don't wrap in
 str().
