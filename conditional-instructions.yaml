@@ -4,7 +4,7 @@
 # These file references are CONDITIONAL instructions and should ONLY be read when relevant to the
 # task(s) you are performing.
 #
-# You SHOULD INFER their purpose and when to load from the id and `when` descriptin given
+# You SHOULD INFER their purpose and when to load from the id and `when` description given
 #
 # When multiple areas apply, load all relevant files.
 
