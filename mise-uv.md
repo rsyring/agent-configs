@@ -22,3 +22,8 @@ Notable environment variables:
 NEVER create or activate a python virtualenv on your own.  If the above isn't working, STOP
 IMMEDIATELY, and ask for assistance.
 
+
+## UV Permissions
+
+1. You ARE PERMITTED to run `uv add` commands in response to user instructions without requiring an explicit secondary prompt for the
+`uv add`.

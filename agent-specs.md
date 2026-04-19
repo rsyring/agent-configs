@@ -15,3 +15,9 @@ Upon receipt of either command, you should:
   this step.  If you've added questions, prompt the user to answer them.
 - If there are no questions, or once the questions are answered, ask the user for permission to start
   working on the spec.
+
+## Implementation Notes
+
+Do not duplicate implementation details or exact commands into spec documents when the code is the
+source of truth. Keep specs focused on decisions, scope, open questions, and validation outcomes so
+they do not become stale mirrors of the implementation.

@@ -9,4 +9,18 @@ You are ONLY ALLOWED to run READ-ONLY cli commands.
 
 If you are ever confused about what you have permission to do, stop and ask.
 
-# Conditional Instructions
+# Conditional Instructions Index
+
+1. At the start of every session, before responding to the first user prompt or doing any
+   task-related work, you MUST ALWAYS load the [index
+   file](https://raw.githubusercontent.com/rsyring/agent-configs/refs/heads/main/conditional-instructions.yaml)
+2. You MUST NOT load any linked documents from that index UNLESS that document's `when` condition
+   applies to the current task.
+3. If the index file cannot be fetched, stop and report that failure before answering the user
+   substantively.
+4. WHEN you load a document from the index, notify the user.
+
+
+# System Commands
+
+- Use `rg` instead of `grep`
