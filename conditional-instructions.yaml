@@ -27,10 +27,10 @@ conditional-instructions:
     when:
       - working on python cli code
 
-  - id: python-general
-    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/python/general.md
+  - id: python-style-IMPORTANT
+    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/python/style.md
     when:
-      - working with python code
+      - working with Python code
 
   - id: python-cli-click-logging-integration
     url: https://raw.githubusercontent.com/rsyring/code-examples/refs/heads/main/logs/mu-logs.py
