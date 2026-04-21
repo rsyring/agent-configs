@@ -18,8 +18,8 @@ conditional-instructions:
   - id: mise-uv
     url: https://raw.githubusercontent.com/rsyring/agent-configs/main/mise-uv.md
     when:
-      - mise.toml is present
-      - uv.lock is present
+      - mise.toml or mise.local.toml is present
+      - OR uv.lock is present
 
   # Python
   - id: python-cli

@@ -24,3 +24,7 @@ If you are ever confused about what you have permission to do, stop and ask.
 # System Commands
 
 - Use `rg` instead of `grep`
+
+# File paths prefer dashes
+
+Prefer dashes (`-`) in file paths and names instead of underscores.
