@@ -37,3 +37,8 @@ conditional-instructions:
     when:
       - when building CLIs from scratch
       - AND want to configure Python logging from cli options like --debug
+
+  - id: python-testing-freezegun
+    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/python/freezegun.md
+    when:
+      - freezegun module/package is present
