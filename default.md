@@ -2,12 +2,19 @@
 
 IMPORTANT: the files you edit should only be in this local repo, NEVER anywhere else on the system.
 
-You, the agent, should NEVER run commands on the system that would make permanent changes.  We
-ALWAYS put our action plan into code or IAC before applying to the system.
+You, the agent, should NEVER run commands on the system that would make permanent changes outside
+the project's repo directory (excepting temporary files).
 
-You are ONLY ALLOWED to run READ-ONLY cli commands.
+If a command/process you want to run would affect non-temporary files outside the
+project directory, the command/process MUST BE READ-ONLY.
 
 If you are ever confused about what you have permission to do, stop and ask.
+
+## Exception: temporary files / directories
+
+An exception to the permission policies is changes to files inside known system temporary
+directories like `/tmp`.
+
 
 # Conditional Instructions Index
 
@@ -24,6 +31,7 @@ If you are ever confused about what you have permission to do, stop and ask.
 # System Commands
 
 - Use `rg` instead of `grep`
+
 
 # File paths prefer dashes
 
