@@ -42,3 +42,9 @@ conditional-instructions:
     url: https://raw.githubusercontent.com/rsyring/agent-configs/main/python/freezegun.md
     when:
       - freezegun module/package is present
+
+  # Writing
+  - id: writing-web-email
+    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/writing/web-email.md
+    when:
+      - drafting or revising website copy, web content, emails, or newsletters
