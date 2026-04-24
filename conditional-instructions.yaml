@@ -43,6 +43,12 @@ conditional-instructions:
     when:
       - freezegun module/package is present
 
+  # Code Reviews
+  - id: code-reviews
+    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/code-reviews.md
+    when:
+      - asked to do a code review
+
   # Writing
   - id: writing-web-email
     url: https://raw.githubusercontent.com/rsyring/agent-configs/main/writing/web-email.md

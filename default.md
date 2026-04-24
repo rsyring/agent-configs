@@ -30,8 +30,7 @@ directories like `/tmp`.
 
 # System Commands
 
-- Use `rg` instead of `grep`
-
+- Use ripgrep `/usr/bin/rg` instead of `grep` because it's faster
 
 # File paths prefer dashes
 
