@@ -4,7 +4,7 @@ You MUST follow these rules when coding Python!
 
 ## General guidelines
 
-- When ruff.toml is present, run `ruff check` and `ruff format` after your code edits.
+- When ruff.toml is present, run `ruff check --fix` and `ruff format` after your code edits.
 - Use double quotes for docstrings and to avoid escaping `'`
 - Use single quotes everywhere else
 - Wrap at 100. Add a `# noqa: E501` only where wrapping would break a URL, ARN, or similar token.
