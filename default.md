@@ -12,9 +12,10 @@ If you are ever confused about what you have permission to do, stop and ask.
 
 ## Exception: temporary files / directories
 
-An exception to the permission policies is changes to files inside known system temporary
-directories like `/tmp`.
+Exceptions to the permission policies:
 
+- Ok: changes to files inside known system temporary directories like `/tmp`.
+- Ok: create/update runtime artifacts like `.pyc`
 
 # Conditional Instructions Index
 
@@ -34,4 +35,4 @@ directories like `/tmp`.
 
 # File paths prefer dashes
 
-Prefer dashes (`-`) in file paths and names instead of underscores.
+UNLESS it's a `*.py` file, prefer dashes (`-`) in file paths and names instead of underscores.

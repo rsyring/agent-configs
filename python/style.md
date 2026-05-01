@@ -93,7 +93,7 @@ class TestLambda:
     def test_example(self): ...
 ```
 
-## Mocking: Use `mock_patch_obj` / `mock_patch`
+## Mocking: Use `mock_patch_obj` / `mock_patch` NOT `monkeypatch`
 
 Use `unittest.mock` instead of pytest's `monkeypatch` fixture. Patch with `testing.py` helpers; they
 default to `autospec=True, spec_set=True`.
