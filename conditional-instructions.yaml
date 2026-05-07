@@ -25,12 +25,14 @@ conditional-instructions:
   - id: python-cli
     url: https://raw.githubusercontent.com/rsyring/agent-configs/main/python/cli.md
     when:
-      - working on python cli code
+      - ONLY when building python cli code
+      - NOT when simply using python CLIs
 
   - id: python-style-IMPORTANT
     url: https://raw.githubusercontent.com/rsyring/agent-configs/main/python/style.md
     when:
-      - working with Python code
+      - Generating or modifying Python code
+      - NOT when simply reading Python code or working in a Python repo
 
   - id: python-cli-click-logging-integration
     url: https://raw.githubusercontent.com/rsyring/code-examples/refs/heads/main/logs/mu-logs.py
