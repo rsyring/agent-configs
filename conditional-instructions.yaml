@@ -14,6 +14,11 @@ conditional-instructions:
     when:
       - whenever a "spec" is referenced
 
+  - id: assk-opus
+    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/ask-opus.md
+    when:
+      - When instructed to interact with "Opus"
+
   # Dev Tools
   - id: mise-uv
     url: https://raw.githubusercontent.com/rsyring/agent-configs/main/mise-uv.md
