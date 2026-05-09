@@ -7,23 +7,21 @@ This repo uses:
 
 If mise or uv are not working as expected, STOP IMMEDIATELY, and ask for assistance.
 
-
 ## Environment Variables
 
 Notable environment variables:
 
 - `__MISE_SESSION`
-    - IF present: mise is activated, you can run mise tools directly
-    - IF absent: use `mise exec ...`
+  - IF present: mise is activated, you can run mise tools directly
+  - IF absent: use `mise exec ...`
 - `VIRTUAL_ENV`:
-    - IF present: a python venv is activated, you can run python tools directly
-    - IF absent: use `mise exec` which should be configured to activate the venv
+  - IF present: a python venv is activated, you can run python tools directly
+  - IF absent: use `mise exec` which should be configured to activate the venv
 
-NEVER create or activate a python virtualenv on your own.  If the above isn't working, STOP
+NEVER create or activate a python virtualenv on your own. If the above isn't working, STOP
 IMMEDIATELY, and ask for assistance.
-
 
 ## UV Permissions
 
-1. You ARE PERMITTED to run `uv add` commands in response to user instructions without requiring an explicit secondary prompt for the
-`uv add`.
+1. You ARE PERMITTED to run `uv add` commands in response to user instructions without
+   requiring an explicit secondary prompt for the `uv add`.

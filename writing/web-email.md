@@ -1,7 +1,7 @@
 # Writing for the Web and Email
 
-Apply these rules when writing or revising website copy, landing pages, docs pages, blog posts,
-emails, or newsletters.
+Apply these rules when writing or revising website copy, landing pages, docs pages, blog
+posts, emails, or newsletters.
 
 ## Write for scanning, not linear reading
 
@@ -10,7 +10,8 @@ emails, or newsletters.
 - Use the inverted pyramid: most important information first, supporting detail after.
 - Use meaningful subheadings, not clever ones.
 - Use bulleted lists when presenting multiple items.
-- Highlight important keywords naturally through informative links, labels, and formatting.
+- Highlight important keywords naturally through informative links, labels, and
+  formatting.
 
 ## Keep text short and chunked
 

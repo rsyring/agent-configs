@@ -5,11 +5,10 @@
 
 ## Typed Click context objects
 
-If commands need a config or similar global object, set that up with `click.make_pass_decorator`. We
-prefer passing in a typed object to the command function.
+If commands need a config or similar global object, set that up with
+`click.make_pass_decorator`. We prefer passing in a typed object to the command function.
 
 ```python
-
 @dataclass
 class Config:
     ssh_user: str

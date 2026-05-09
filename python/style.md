@@ -6,13 +6,14 @@ You MUST follow these rules when coding Python!
 
 - Use double quotes for docstrings and to avoid escaping `'`
 - Use single quotes everywhere else
-- Wrap at 100. Add a `# noqa: E501` only where wrapping would break a URL, ARN, or similar token.
+- Wrap at 100. Add a `# noqa: E501` only where wrapping would break a URL, ARN, or similar
+  token.
 - When needed, use `from os import environ`
 - Prefer modern Python with dataclasses and object oriented behaviors on those classes.
-- Avoid creating a lot of top-level functions (i.e. function soup) when the behavior is closely
-  associated with it's data and could be a method on a class.
-- Before adding a new helper, function, or class, search for an existing project pattern and reuse
-  or extend it. DO NOT create near-duplicate utilities.
+- Avoid creating a lot of top-level functions (i.e. function soup) when the behavior is
+  closely associated with it's data and could be a method on a class.
+- Before adding a new helper, function, or class, search for an existing project pattern
+  and reuse or extend it. DO NOT create near-duplicate utilities.
 
 ## Module logger: Bind at module scope
 
@@ -25,7 +26,8 @@ log = logging.getLogger(__name__)
 ## Python version: Write for 3.12+
 
 - Prefer typing, concrete types and `collections.abc` interfaces.
-- Use PEP 604 unions (`X | None`), PEP 585 generics (`list[str]`, `dict[str, X]`, `type[X]`), `typing.Self`
+- Use PEP 604 unions (`X | None`), PEP 585 generics (`list[str]`, `dict[str, X]`,
+  `type[X]`), `typing.Self`
 - Avoid `Any` unless it is truly unavoidable.
 
 ```python
@@ -50,8 +52,8 @@ Path variable naming conventions:
 
 ## Dataclasses: Prefer `@dataclass` with `field(default_factory=...)`
 
-Use dataclasses for config, AWS record wrappers, and simple value objects. Default mutables with
-`field(default_factory=...)`.
+Use dataclasses for config, AWS record wrappers, and simple value objects. Default
+mutables with `field(default_factory=...)`.
 
 ```python
 @dataclass
@@ -94,8 +96,8 @@ class TestLambda:
 
 ## Mocking: Use `mock_patch_obj` / `mock_patch` NOT `monkeypatch`
 
-Use `unittest.mock` instead of pytest's `monkeypatch` fixture. Patch with `testing.py` helpers; they
-default to `autospec=True, spec_set=True`.
+Use `unittest.mock` instead of pytest's `monkeypatch` fixture. Patch with `testing.py`
+helpers; they default to `autospec=True, spec_set=True`.
 
 ```python
 @mock_patch_obj(config.utils, 'host_user')
@@ -105,9 +107,9 @@ def test_minimal_config_defaults(self, m_host_user):
 
 ## Naming: Short, lowercased module names
 
-Use short module names and shorten when a name shadows a builtin or keyword (`lamb.py` for lambda,
-`exc.py` for exceptions, `logs.py` for logging). For shadowing parameters, suffix with `_`
-(`from_`, `sqs_`).
+Use short module names and shorten when a name shadows a builtin or keyword (`lamb.py` for
+lambda, `exc.py` for exceptions, `logs.py` for logging). For shadowing parameters, suffix
+with `_` (`from_`, `sqs_`).
 
 ```python
 def take(from_: dict, *keys, strict=True): ...
@@ -115,8 +117,8 @@ def take(from_: dict, *keys, strict=True): ...
 
 ## Comments: Only where intent is non-obvious
 
-Match the surrounding density. Comment the "why", not the "what". Leave `TODO:` notes for known
-follow-ups; do not leave commentary explaining edits.
+Match the surrounding density. Comment the "why", not the "what". Leave `TODO:` notes for
+known follow-ups; do not leave commentary explaining edits.
 
 ```python
 # Needed to create network interfaces and other vpc actions when it joins the vpc.
@@ -144,15 +146,15 @@ except self.lc.exceptions.InvalidParameterValueException as e:
     raise RuntimeError("Existing function is Zip type, can't update.") from e
 ```
 
-DO NOT catch exceptions just to minimally wrap and/or re-reraise them, prefer to let the original
-exception bubble up unless we need to take action due to the exception.
+DO NOT catch exceptions just to minimally wrap and/or re-reraise them, prefer to let the
+original exception bubble up unless we need to take action due to the exception.
 
 **Never swallow exceptions** with `pass` or just logging.
 
 ## Custom exceptions: Subclass and `pass`
 
-Declare domain exceptions in `exc.py` as empty subclasses. Chain them into a project-specific
-hierarchy when useful.
+Declare domain exceptions in `exc.py` as empty subclasses. Chain them into a
+project-specific hierarchy when useful.
 
 ```python
 class DeployAppException(Exception):
@@ -174,10 +176,10 @@ def from_aws(cls, data: dict) -> Self:
 
 ## Assertions: Use for internal invariants, not user input
 
-Use `assert` to guard preconditions between cooperating internal code (mutually-exclusive args,
-enum-like values, test-account safety). `assert` is preferrable when the error is due to a coding
-mistake a developer will find/fix during QA.  Use exceptions for errors that can be triggered at
-runtime in production.
+Use `assert` to guard preconditions between cooperating internal code (mutually-exclusive
+args, enum-like values, test-account safety). `assert` is preferrable when the error is
+due to a coding mistake a developer will find/fix during QA. Use exceptions for errors
+that can be triggered at runtime in production.
 
 ```python
 def policy_doc(*actions, resource=None, principal=None, effect='Allow', condition=None):
@@ -187,8 +189,8 @@ def policy_doc(*actions, resource=None, principal=None, effect='Allow', conditio
 
 ## IMPORTANT! -- Control flow: Return early, do not nest
 
-Handle the empty/missing/unsupported case first and `return`; keep the happy path at the outer
-indentation level.
+Handle the empty/missing/unsupported case first and `return`; keep the happy path at the
+outer indentation level.
 
 ```python
 def delete(self, ident: str, *list_args):
@@ -202,10 +204,11 @@ def delete(self, ident: str, *list_args):
 
 ## Subprocesses: Use `sub_run`
 
-Prefer utility function `sub_run` for subprocess code so output is captured and logged properly.
+Prefer utility function `sub_run` for subprocess code so output is captured and logged
+properly.
 
-`subprocess.run()` / `Popen` takes `pathlib.Path` objects directly as arguments.  Don't wrap in
-str().
+`subprocess.run()` / `Popen` takes `pathlib.Path` objects directly as arguments. Don't
+wrap in str().
 
 ## String formatting: Use f-strings
 
@@ -213,8 +216,9 @@ Always use f-strings for string interpolation. Do not use `.format()` or `%s` fo
 
 ## Print vs Logging: Keep output at the edge
 
-Do not use `print()` or `click.echo()` unless explicitly writing a CLI command's output. Use the
-module's `log` instance for library and runtime code. Keep input and output at the edge.
+Do not use `print()` or `click.echo()` unless explicitly writing a CLI command's output.
+Use the module's `log` instance for library and runtime code. Keep input and output at the
+edge.
 
 ## Use furl for URL manipulations
 
