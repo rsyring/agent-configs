@@ -10,8 +10,8 @@ When asked to do a code review:
   cleanliness/maintainability issues, failure to follow conditional instructions (which
   are the same as yours), potential performance problems, logic problems, and/or bugs.
 - Pay close attention to testing logic and style guidelines. It's VERY IMPORTANT that
-  tests are useful and reasonable tests to increase coverage. Do not GAME the system just
-  to increase test coverage.
+  tests are useful and reasonable and increase coverage. Do not GAME the system just to
+  increase test coverage.
 
 ## Write review to a file
 
@@ -19,5 +19,9 @@ Write your review to a file as follows:
 
 - If your review is related to a spec, next to the spec file with "review-{model}"
   appended to the spec's file name.
-- If `./agents` exists
-- In the repo root
+- Otherwise, if `./agents` exists, in `./agents`
+- Otherwise, in the repo root
+
+When deciding on "{model}" for the file name, use the model that created the review.
+
+Report the path you saved your review to.

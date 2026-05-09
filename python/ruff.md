@@ -6,7 +6,7 @@ A full ruff check should be:
 ruff format && ruff check --fix --extend-fixable F401 && ruff format
 ```
 
-To avoid erronous errors from the check that the format will fix.
+This avoids erroneous errors from the check that formatting will fix.
 
 ## Ruff Conditions
 

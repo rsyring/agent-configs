@@ -4,7 +4,7 @@
 # These file references are CONDITIONAL instructions and should ONLY be read when relevant to the
 # task(s) you are performing.
 #
-# You SHOULD INFER their purpose and when to load from the id and `when` description.
+# You SHOULD INFER their purpose and when to load them from the ID and `when` description.
 #
 # When multiple areas apply, load all relevant files.
 
@@ -17,7 +17,7 @@ conditional-instructions:
   - id: ask-opus
     url: https://raw.githubusercontent.com/rsyring/agent-configs/main/ask-opus.md
     when:
-      - When instructed to interact with "Opus"
+      - when instructed to interact with "Opus"
       - IGNORE if you are an Opus agent/model
 
   # Dev Tools

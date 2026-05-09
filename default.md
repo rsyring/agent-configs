@@ -4,7 +4,7 @@ IMPORTANT: the files you edit should only be in this local repo, NEVER anywhere 
 the system.
 
 You, the agent, should NEVER run commands on the system that would make permanent changes
-outside the project's repo directory (excepting temporary files).
+outside the project's repo directory (except for temporary files).
 
 If a command/process you want to run would affect non-temporary files outside the project
 directory, the command/process MUST BE READ-ONLY.

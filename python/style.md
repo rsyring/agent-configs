@@ -9,9 +9,9 @@ You MUST follow these rules when coding Python!
 - Wrap at 100. Add a `# noqa: E501` only where wrapping would break a URL, ARN, or similar
   token.
 - When needed, use `from os import environ`
-- Prefer modern Python with dataclasses and object oriented behaviors on those classes.
+- Prefer modern Python with dataclasses and object-oriented behavior in those classes.
 - Avoid creating a lot of top-level functions (i.e. function soup) when the behavior is
-  closely associated with it's data and could be a method on a class.
+  closely associated with its data and could be a method on a class.
 - Before adding a new helper, function, or class, search for an existing project pattern
   and reuse or extend it. DO NOT create near-duplicate utilities.
 
@@ -37,7 +37,7 @@ rec_cls: type[AWSRec]
 
 ## Paths: Use pathlib.Path
 
-Construct filelsystem paths with `Path`:
+Construct filesystem paths with `Path`:
 
 ```python
 etc_dpath = Path('/etc/')
@@ -121,7 +121,7 @@ Match the surrounding density. Comment the "why", not the "what". Leave `TODO:` 
 known follow-ups; do not leave commentary explaining edits.
 
 ```python
-# Needed to create network interfaces and other vpc actions when it joins the vpc.
+# Needed to create network interfaces and other VPC actions when it joins the VPC.
 self.roles.attach_managed_policy(role_name, 'AWSLambdaVPCAccessExecutionRole')
 ```
 
@@ -146,7 +146,7 @@ except self.lc.exceptions.InvalidParameterValueException as e:
     raise RuntimeError("Existing function is Zip type, can't update.") from e
 ```
 
-DO NOT catch exceptions just to minimally wrap and/or re-reraise them, prefer to let the
+DO NOT catch exceptions just to minimally wrap and/or re-raise them; prefer to let the
 original exception bubble up unless we need to take action due to the exception.
 
 **Never swallow exceptions** with `pass` or just logging.
@@ -177,9 +177,9 @@ def from_aws(cls, data: dict) -> Self:
 ## Assertions: Use for internal invariants, not user input
 
 Use `assert` to guard preconditions between cooperating internal code (mutually-exclusive
-args, enum-like values, test-account safety). `assert` is preferrable when the error is
-due to a coding mistake a developer will find/fix during QA. Use exceptions for errors
-that can be triggered at runtime in production.
+args, enum-like values, test-account safety). `assert` is preferable when the error is due
+to a coding mistake a developer will find/fix during QA. Use exceptions for errors that
+can be triggered at runtime in production.
 
 ```python
 def policy_doc(*actions, resource=None, principal=None, effect='Allow', condition=None):
