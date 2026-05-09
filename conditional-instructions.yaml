@@ -70,6 +70,11 @@ conditional-instructions:
       - asked to do a code review
 
   # Writing
+  - id: proofreading
+    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/writing/proofread.md
+    when:
+      - asked to "proofread"
+
   - id: writing-web-email
     url: https://raw.githubusercontent.com/rsyring/agent-configs/main/writing/web-email.md
     when:
