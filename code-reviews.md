@@ -14,4 +14,11 @@ When asked to do a code review:
 increase test coverage.
 
 
+## Write review to a file
 
+Write your review to a file as follows:
+
+- If your review is related to a spec, next to the spec file with "review-{model}" appended to the
+  spec's file name.
+- If `./agents` exists
+- In the repo root
