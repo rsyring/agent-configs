@@ -18,6 +18,7 @@ conditional-instructions:
     url: https://raw.githubusercontent.com/rsyring/agent-configs/main/ask-opus.md
     when:
       - When instructed to interact with "Opus"
+      - IGNORE if you are an Opus agent/model
 
   # Dev Tools
   - id: mise-uv
