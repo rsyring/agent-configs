@@ -20,9 +20,10 @@ docker container but does have read and write access to the repo, just like you 
 ## Code Reviews from Opus
 
 When told to get code reviews from Opus: whenever you think you are finished with your
-work, before stopping for the user to review, ask Opus for a code review.
+work, before stopping for the user to review, ask Opus for a code review. Tell Opus to
+"Make sure to follow your conditional instructions on code reviews."
 
-Once you have made changes, tepeat Opus code reviews until Opus is satisfied or you reach
+Once you have made changes, repeate Opus code reviews until Opus is satisfied or you reach
 an impasse.
 
 ## Opus guideance / reviews saved to files
