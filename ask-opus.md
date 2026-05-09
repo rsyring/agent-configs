@@ -12,6 +12,11 @@ strongly disagree, you may ignore Opus and document you have done so.
 When told to get guidance from Opus, assume the user isn't available, ask Opus for input
 and/or post your questions to it instead.
 
+## Opus Context / Repo Access
+
+Opus is the Antropic Opus model running through an Agument agent. It is sandboxed in a
+docker container but does have read and write access to the repo, just like you do.
+
 ## Code Reviews from Opus
 
 When told to get code reviews from Opus: whenever you think you are finished with your
