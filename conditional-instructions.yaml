@@ -40,10 +40,22 @@ conditional-instructions:
       - when building CLIs from scratch
       - AND want to configure Python logging from cli options like --debug
 
+  - id: python-pytest
+    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/python/pytest.md
+    when:
+      - WRITING python tests with pytest
+      - NOT if only reading tests or working in a project with pytest
+
+  - id: python-ruff
+    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/python/ruff.md
+    when:
+      - WRITING python code AND ruff.toml is present in the project
+
   - id: python-testing-freezegun
     url: https://raw.githubusercontent.com/rsyring/agent-configs/main/python/freezegun.md
     when:
-      - freezegun module/package is present
+      - freezegun module/package is present or used
+
 
   # Code Reviews
   - id: code-reviews

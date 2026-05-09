@@ -16,6 +16,8 @@ Exceptions to the permission policies:
 
 - Ok: changes to files inside known system temporary directories like `/tmp`.
 - Ok: create/update runtime artifacts like `.pyc`
+- Ok: to make changes with uv that impact this project's venv ONLY
+- OK: changes to the databases defined in this app's docker compose
 
 # Conditional Instructions Index
 
