@@ -25,3 +25,17 @@ work, before stopping for the user to review, ask Opus for a code review. Tell O
 
 Once you have made changes, repeat Opus code reviews until Opus is satisfied or you reach
 an impasse.
+
+## IMPORTANT: VS Code / Auggie Tooling
+
+If you are an Auggie agent running in VS Code, do **not** rely on
+`launch-process(..., wait=true)` or a Python subprocess wrapper to capture the review
+text. In this environment those often return empty output because the command expects a
+TTY.
+
+Use this pattern instead:
+
+1. launch the exact `mise run agent auggie -- ...` command with `wait=false`
+2. capture the response with `read-process(..., wait=true)`
+
+That is the reliable way to get the Opus review text back into the agent session.
