@@ -33,9 +33,12 @@ If you are an Auggie agent running in VS Code, do **not** rely on
 text. In this environment those often return empty output because the command expects a
 TTY.
 
-Use this pattern instead:
+Instead, do this:
 
 1. launch the exact `mise run agent auggie -- ...` command with `wait=false`
-2. capture the response with `read-process(..., wait=true)`
+2. poll with `read-process(..., wait=true, max_wait_seconds=15)`
+3. if still running, repeat short polls until you get output or completion
+4. exit if waiting more than 10 mins
 
-That is the reliable way to get the Opus review text back into the agent session.
+Reason: Opus/API failures can occur early, but a long blocking wait can hide them for
+minutes.
