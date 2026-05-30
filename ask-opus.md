@@ -36,7 +36,7 @@ TTY.
 Instead, do this:
 
 1. launch the exact `mise run agent auggie -- ...` command with `wait=false`
-2. poll with `read-process(..., wait=true, max_wait_seconds=15)`
+2. poll with `read-process(..., wait=true, max_wait_seconds=60)`
 3. if still running, repeat short polls until you get output or completion
 4. exit if waiting more than 10 mins
 
