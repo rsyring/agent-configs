@@ -7,15 +7,18 @@ If you are told to ask Opus about something, you can do that by running this com
 You should generally fix anything Opus finds wrong and/or follow its advice. If you
 strongly disagree, you may ignore Opus and document that you have done so.
 
+
 ## Guidance from Opus
 
 When told to get guidance from Opus, assume the user isn't available, ask Opus for input
 and/or post your questions to it instead.
 
+
 ## Opus Context / Repo Access
 
 Opus is the Anthropic Opus model running through an Augment agent. It is sandboxed in a
 docker container but does have read and write access to the repo, just like you do.
+
 
 ## Code Reviews from Opus
 
@@ -25,6 +28,7 @@ work, before stopping for the user to review, ask Opus for a code review. Tell O
 
 Once you have made changes, repeat Opus code reviews until Opus is satisfied or you reach
 an impasse.
+
 
 ## IMPORTANT: VS Code / Auggie Tooling
 

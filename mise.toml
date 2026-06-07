@@ -1,2 +1,3 @@
 [tools]
-dprint = "latest"
+prek = "latest"
+rumdl = "latest"

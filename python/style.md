@@ -2,6 +2,7 @@
 
 You MUST follow these rules when coding Python!
 
+
 ## General guidelines
 
 - Use double quotes for docstrings and to avoid escaping `'`
@@ -15,6 +16,7 @@ You MUST follow these rules when coding Python!
 - Before adding a new helper, function, or class, search for an existing project pattern
   and reuse or extend it. DO NOT create near-duplicate utilities.
 
+
 ## Module logger: Bind at module scope
 
 Every module that logs defines `log` once at module level using `__name__`.
@@ -22,6 +24,7 @@ Every module that logs defines `log` once at module level using `__name__`.
 ```python
 log = logging.getLogger(__name__)
 ```
+
 
 ## Python version: Write for 3.12+
 
@@ -34,6 +37,7 @@ log = logging.getLogger(__name__)
 def list(self, name_prefix: str | None = None) -> dict[str, Queue]: ...
 rec_cls: type[AWSRec]
 ```
+
 
 ## Paths: Use pathlib.Path
 
@@ -50,6 +54,7 @@ Path variable naming conventions:
 - `_dpath`: suffix for directories
 - `_fpath`: suffix for files
 
+
 ## Dataclasses: Prefer `@dataclass` with `field(default_factory=...)`
 
 Use dataclasses for config, AWS record wrappers, and simple value objects. Default
@@ -64,6 +69,7 @@ class Config:
     policy_arns: list[str] = field(default_factory=list)
 ```
 
+
 ## Walrus: Assign-and-test in conditionals
 
 Use `:=` when the tested value is also needed in the branch.
@@ -73,6 +79,7 @@ if action_method := getattr(cls, action, None):
     return action_method(event, context)
 ```
 
+
 ## Abstract hooks: `raise NotImplementedError`
 
 Declare extension points on a base class by raising `NotImplementedError`.
@@ -81,6 +88,7 @@ Declare extension points on a base class by raising `NotImplementedError`.
 def client_create(self) -> None:
     raise NotImplementedError
 ```
+
 
 ## Tests: Class-grouped with pytest fixtures
 
@@ -94,6 +102,7 @@ class TestLambda:
     def test_example(self): ...
 ```
 
+
 ## Mocking: Use `mock_patch_obj` / `mock_patch` NOT `monkeypatch`
 
 Use `unittest.mock` instead of pytest's `monkeypatch` fixture. Patch with `testing.py`
@@ -105,6 +114,7 @@ def test_minimal_config_defaults(self, m_host_user):
     m_host_user.return_value = 'picard.science-station'
 ```
 
+
 ## Naming: Short, lowercased module names
 
 Use short module names and shorten when a name shadows a builtin or keyword (`lamb.py` for
@@ -114,6 +124,7 @@ with `_` (`from_`, `sqs_`).
 ```python
 def take(from_: dict, *keys, strict=True): ...
 ```
+
 
 ## Comments: Only where intent is non-obvious
 
@@ -125,6 +136,7 @@ known follow-ups; do not leave commentary explaining edits.
 self.roles.attach_managed_policy(role_name, 'AWSLambdaVPCAccessExecutionRole')
 ```
 
+
 ## Keyword-only args: Put `*` before flags and disambiguators
 
 Place a `*` before booleans, mode flags, and any argument whose meaning would be unclear
@@ -135,6 +147,7 @@ def delete(self, *, force: bool): ...
 def b3_sess(*, kind: str = 'fake'): ...
 def push(self, image_name: str, *, tag_suffix: str | None = None): ...
 ```
+
 
 ## Exception chaining: Re-raise `from`
 
@@ -151,6 +164,7 @@ original exception bubble up unless we need to take action due to the exception.
 
 **Never swallow exceptions** with `pass` or just logging.
 
+
 ## Custom exceptions: Subclass and `pass`
 
 Declare domain exceptions in `exc.py` as empty subclasses. Chain them into a
@@ -163,6 +177,7 @@ class DeployAppConfigMissing(DeployAppException):
     pass
 ```
 
+
 ## `Self` return: Type classmethod factories with `typing.Self`
 
 A classmethod that returns `cls(...)` is annotated with `Self`.
@@ -173,6 +188,7 @@ from typing import Self
 def from_aws(cls, data: dict) -> Self:
     return cls(**cls.take_fields(data))
 ```
+
 
 ## Assertions: Use for internal invariants, not user input
 
@@ -186,6 +202,7 @@ def policy_doc(*actions, resource=None, principal=None, effect='Allow', conditio
     assert resource or principal
     assert not (resource and principal)
 ```
+
 
 ## IMPORTANT! -- Control flow: Return early, do not nest
 
@@ -202,6 +219,7 @@ def delete(self, ident: str, *list_args):
     self.clear_cache()
 ```
 
+
 ## Subprocesses: Use `sub_run`
 
 Prefer utility function `sub_run` for subprocess code so output is captured and logged
@@ -210,9 +228,11 @@ properly.
 `subprocess.run()` / `Popen` takes `pathlib.Path` objects directly as arguments. Don't
 wrap in str().
 
+
 ## String formatting: Use f-strings
 
 Always use f-strings for string interpolation. Do not use `.format()` or `%s` formatting.
+
 
 ## Print vs Logging: Keep output at the edge
 
@@ -220,8 +240,9 @@ Do not use `print()` or `click.echo()` unless explicitly writing a CLI command's
 Use the module's `log` instance for library and runtime code. Keep input and output at the
 edge.
 
+
 ## Use furl for URL manipulations
 
-https://github.com/gruns/furl
+<https://github.com/gruns/furl>
 
 `uv add furl` then `from furl import furl; furl('https://...')`

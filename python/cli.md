@@ -3,6 +3,7 @@
 - Prefer Click for CLIs
 - Prefer rich (the library) for tabular or other complex output
 
+
 ## Typed Click context objects
 
 If commands need a config or similar global object, set that up with

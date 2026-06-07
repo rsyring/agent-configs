@@ -11,6 +11,7 @@ directory, the command/process MUST BE READ-ONLY.
 
 If you are ever confused about what you have permission to do, stop and ask.
 
+
 ## Exception: temporary files / directories
 
 Exceptions to the permission policies:
@@ -20,7 +21,8 @@ Exceptions to the permission policies:
 - Ok: to make changes with uv that impact this project's venv ONLY
 - OK: changes to the databases defined in this app's docker compose
 
-# Conditional Instructions Index
+
+## Conditional Instructions Index
 
 1. At the start of every session, before responding to the first user prompt or doing any
    task-related work, you MUST ALWAYS load the
@@ -31,11 +33,13 @@ Exceptions to the permission policies:
    user substantively.
 4. WHEN you load a document from the index, notify the user.
 
-# System Commands
+
+## System Commands
 
 - Use ripgrep `/usr/bin/rg` instead of `grep` because it's faster
 
-# File paths prefer dashes
+
+## File paths prefer dashes
 
 UNLESS it's a `*.py` file, prefer dashes (`-`) in file paths and names instead of
 underscores.

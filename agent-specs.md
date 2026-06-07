@@ -16,6 +16,7 @@ Upon receipt of either command, you should:
 - If there are no questions, or once the questions are answered, ask the user for
   permission to start working on the spec.
 
+
 ## Implementation Notes
 
 Do not duplicate implementation details or exact commands into spec documents when the
