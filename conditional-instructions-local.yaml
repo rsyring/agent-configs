@@ -1,0 +1,81 @@
+# Conditional Instruction Modules:
+# ================================
+#
+# These file references are CONDITIONAL instructions and should ONLY be read when relevant to the
+# task(s) you are performing.
+#
+# You SHOULD INFER their purpose and when to load them from the ID and `when` description.
+#
+# When multiple areas apply, load all relevant files.
+
+conditional-instructions:
+  - id: agent-specs
+    path: ~/projects/agent-configs/agent-specs.md
+    when:
+      - whenever a "spec" is referenced
+
+  - id: ask-opus
+    path: ~/projects/agent-configs/ask-opus.md
+    when:
+      - when instructed to interact with "Opus"
+      - IGNORE if you are an Opus agent/model
+
+  # Dev Tools
+  - id: mise-uv
+    path: ~/projects/agent-configs/mise-uv.md
+    when:
+      - mise.toml or mise.local.toml is present
+      - OR uv.lock is present
+
+  # Python
+  - id: python-cli
+    path: ~/projects/agent-configs/python/cli.md
+    when:
+      - ONLY when building python cli code
+      - NOT when simply using python CLIs
+
+  - id: python-style-IMPORTANT
+    path: ~/projects/agent-configs/python/style.md
+    when:
+      - Generating or modifying Python code
+      - NOT when simply reading Python code or working in a Python repo
+
+  - id: python-cli-click-logging-integration
+    path: ~/projects/code-examples/logs/mu-logs.py
+    when:
+      - when building CLIs from scratch
+      - AND want to configure Python logging from cli options like --debug
+
+  - id: python-pytest
+    path: ~/projects/agent-configs/python/pytest.md
+    when:
+      - WRITING python tests with pytest
+      - NOT if only reading tests or working in a project with pytest
+
+  - id: python-ruff
+    path: ~/projects/agent-configs/python/ruff.md
+    when:
+      - WRITING python code AND ruff.toml is present in the project
+
+  - id: python-testing-freezegun
+    path: ~/projects/agent-configs/python/freezegun.md
+    when:
+      - freezegun module/package is present or used
+
+
+  # Code Reviews
+  - id: code-reviews
+    path: ~/projects/agent-configs/code-reviews.md
+    when:
+      - asked to do a code review
+
+  # Writing
+  - id: proofreading
+    path: ~/projects/agent-configs/writing/proofread.md
+    when:
+      - asked to "proofread"
+
+  - id: writing-web-email
+    path: ~/projects/agent-configs/writing/web-email.md
+    when:
+      - drafting or revising website copy, web content, emails, or newsletters
