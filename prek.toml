@@ -19,3 +19,14 @@ hooks = [
   { id = "rumdl-fmt" },
   { id = "rumdl" },
 ]
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "conditional-instructions-local"
+name = "generate conditional-instructions-local.yaml"
+entry = "mise run --force conditional-instructions"
+language = "system"
+pass_filenames = false
+always_run = true
