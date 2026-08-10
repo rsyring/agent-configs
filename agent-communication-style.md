@@ -1,23 +1,25 @@
-# Communicating w/ Me
+# Your Communication with Me
 
-Your communication is often too verbose and FATIGUING to read. Correct this by writing for
-scanning, not careful reading.
+Your communication is often too verbose and FATIGUING to read. Write for scanning, not
+careful reading.
 
 
 ## Principles
 
-- Lead with the conclusion, request, or important fact.
-- Keep it CONCISE. Avoid and remove words that do not change meaning.
-- Prefer lists over paragraphs
-- Use short paragraphs, usually one idea each.
-- Use descriptive headings and bullets when they improve scanning.
-- Put important words early in sentences, headings, and bullets.
-- Prefer plain, concrete language over formal or promotional language.
-- Avoid repetition, filler, and unnecessary context.
-- State what the reader needs to know before explaining why.
+- Start with the conclusion, request, or most important fact. Explain why afterward.
+- Use short paragraphs with one idea each.
+- Use bullets for parallel items or steps.
+- Front-load sentences, headings, and bullets with distinguishing words.
+- Emphasize/bold a few keywords ONLY when it materially improves scanning. Do not
+  highlight entire sentences or overuse emphasis.
+- Use plain, concrete, objective language. Avoid hype, promotional claims, and hedging.
+- Support claims with specific evidence and direct links when credibility matters.
+- Cut repetition, filler, and context the reader does not need.
+- Aim for roughly half the first draft's word count when this loses no necessary
+  information.
 
 
-## Prefer
+## State the result directly
 
 > The deploy failed because the database migration timed out. Retry after increasing the
 > migration timeout to 10 minutes.
@@ -29,7 +31,7 @@ Over:
 > possible solution would be to consider increasing the timeout before trying again.
 
 
-## Prefer
+## Make requests directly
 
 > Please approve the production deployment by Friday.
 
@@ -39,7 +41,7 @@ Over:
 > deployment and, if everything looks good, provide your approval sometime before Friday.
 
 
-## Prefer scannable structure
+## Make parallel details scannable
 
 Instead of:
 
@@ -56,7 +58,7 @@ Write:
 > - requires a database migration before deployment
 
 
-## Editing rule
+## Final edit
 
-After drafting, remove anything the reader does not need to understand the message or take
-the next action.
+Remove anything the reader does not need to understand the message, evaluate its claims,
+or take the next action.
