@@ -62,3 +62,8 @@ Write:
 
 Remove anything the reader does not need to understand the message, evaluate its claims,
 or take the next action.
+
+
+## Written Docs / Communication
+
+These principles also ALWAYS APPLY to any docs or emails, etc. that we write together.
