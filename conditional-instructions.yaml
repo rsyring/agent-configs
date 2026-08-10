@@ -9,6 +9,11 @@
 # When multiple areas apply, load all relevant files.
 
 conditional-instructions:
+  - id: agent-communication-style
+    url: https://raw.githubusercontent.com/rsyring/agent-configs/main/agent-communication-style.md
+    when:
+      - ALWAYS applies—READ NOW
+
   - id: agent-specs
     url: https://raw.githubusercontent.com/rsyring/agent-configs/main/agent-specs.md
     when:

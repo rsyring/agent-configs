@@ -9,6 +9,11 @@
 # When multiple areas apply, load all relevant files.
 
 conditional-instructions:
+  - id: agent-communication-style
+    path: ~/projects/agent-configs/agent-communication-style.md
+    when:
+      - ALWAYS applies—READ NOW
+
   - id: agent-specs
     path: ~/projects/agent-configs/agent-specs.md
     when:
