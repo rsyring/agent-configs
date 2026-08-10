@@ -5,7 +5,7 @@ This repo uses:
 - uv: for python dependencies and venv creation
 - mise: for developer tools, environment variables, shell setup, and tasks
 
-If mise or uv are not working as expected, STOP IMMEDIATELY, and ask for assistance.
+DO NOT WORKAROUND mise or uv errors. STOP IMMEDIATELY, and ask for assistance.
 
 
 ## Environment Variables
